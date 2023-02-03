@@ -1,12 +1,16 @@
 import './App.css';
-import Button from './components/button'
+import Button from './components/button';
+import Input from './components/input';
 
 function App() {
   return (
     <div className="App">
-      <Button />
+      {/*@ts-ignore */}
+      <Input
+        placeholder='Enter your name'
+      />
     </div>
   );
-}
+};
 
 export default App;
