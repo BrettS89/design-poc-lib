@@ -1,4 +1,5 @@
 declare const _default: {
+    main: string;
     fontSize: number;
     border: string;
     lightGray: string;
