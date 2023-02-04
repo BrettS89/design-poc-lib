@@ -14,10 +14,10 @@ import baseStyles from './styles';
 import theme from '../../styles/theme';
 var Button = function (_a) {
     var _b;
-    var _c = _a.styles, styles = _c === void 0 ? {} : _c;
+    var children = _a.children, _c = _a.styles, styles = _c === void 0 ? {} : _c;
     //@ts-ignore
     var themeStyles = (_b = theme.button) !== null && _b !== void 0 ? _b : {};
     var allStyles = __assign(__assign(__assign({}, baseStyles._base), themeStyles), styles);
-    return (_jsx("button", __assign({ style: allStyles }, { children: "Click meee" })));
+    return (_jsx("button", __assign({ style: allStyles }, { children: children })));
 };
 export default Button;
