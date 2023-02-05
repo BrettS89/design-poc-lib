@@ -13,7 +13,7 @@ export default {
         borderRadius: styles.borderRadius,
         fontSize: styles.fontSize,
     },
-    button: {
-        color: '#000'
+    disabled: {
+        color: 'red!important',
     },
 };

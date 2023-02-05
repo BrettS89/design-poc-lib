@@ -11,7 +11,7 @@ declare const _default: {
         borderRadius: number;
         fontSize: number;
     };
-    button: {
+    disabled: {
         color: string;
     };
 };
