@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import baseStyles from './styles';
 import theme from '../../styles/theme';
-import defaultStyles from '../../styles';
 
 const Input = ({ placeholder, type, styles={} }) => {
   //@ts-ignore

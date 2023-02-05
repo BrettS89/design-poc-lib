@@ -6,9 +6,10 @@ function App() {
   return (
     <div className="App">
       {/*@ts-ignore */}
-      <Input
-        placeholder='Enter your name'
-      />
+
+      <Button disabled>
+        Hello world!
+      </Button>
     </div>
   );
 };
