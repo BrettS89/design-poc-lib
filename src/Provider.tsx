@@ -40,6 +40,7 @@ export const DesignSystemProvider = ({ children }) => {
     try {
       setStatus({ ...status, isLoading: true });
       const designSystem = await axios.get(`http://localhost:3030/design/system/${designSystemId}`);
+      console.log(designSystem.data);
       // @ts-ignore
       const { data } = await axios.get(`http://localhost:3030/design/styles?designSystemId=${designSystem.data._id}&$limit=1000`);
       setStyles(data.data);
