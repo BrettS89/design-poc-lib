@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled'
 import baseStyles from './styles';
-import theme from '../../styles/theme';
 import { addImportantToStyles } from '../../utilities';
+import { useStyles } from '../../Provider';
 
 interface Props extends React.PropsWithChildren {
   styles?: Record<string, any>;
@@ -10,8 +10,10 @@ interface Props extends React.PropsWithChildren {
 }
 
 const Button: React.FC<Props> = ({ children, styles = {}, disabled }) => {
+  const componentStyles = useStyles('button');
+
   //@ts-ignore
-  const themeStyles = theme.button ?? {};
+  const themeStyles = componentStyles?.styles ?? {};
   const allStyles = { ...baseStyles._base, ...themeStyles, ...styles };
   //@ts-ignore
   const disabledStyles = { ...baseStyles.disabled, ...(themeStyles.disabled || {}), ...(styles.disabled || {}) }
