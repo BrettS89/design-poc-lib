@@ -1,7 +1,7 @@
-/// <reference types="react" />
-declare const Button: ({ children, styles, disabled }: {
-    children: any;
-    styles?: {};
-    disabled: any;
-}) => JSX.Element;
+import React from 'react';
+interface Props extends React.PropsWithChildren {
+    styles?: Record<string, any>;
+    disabled?: boolean;
+}
+declare const Button: React.FC<Props>;
 export default Button;
