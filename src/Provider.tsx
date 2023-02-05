@@ -41,7 +41,7 @@ export const DesignSystemProvider = ({ children }) => {
       setStatus({ ...status, isLoading: true });
       const designSystem = await axios.get(`http://localhost:3030/design/system/${designSystemId}`);
       // @ts-ignore
-      const { data } = await axios.get(`http://localhost:3030/design/styles?designSystemId=${designSystem._id}`);
+      const { data } = await axios.get(`http://localhost:3030/design/styles?designSystemId=${designSystem.data._id}&$limit=1000`);
       setStyles(data.data);
       setStatus({ ...status, isLoading: false });
     } catch(e) {
