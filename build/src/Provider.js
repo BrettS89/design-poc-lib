@@ -78,7 +78,7 @@ export var DesignSystemProvider = function (_a) {
                 case 1:
                     designSystem = _a.sent();
                     console.log(designSystem.data);
-                    return [4 /*yield*/, axios.get("http://localhost:3030/design/styles?designSystemId=".concat(designSystem.data._id, "&$limit=1000"))];
+                    return [4 /*yield*/, axios.get("http://localhost:3030/design/style?designSystemId=".concat(designSystem.data._id, "&$limit=1000"))];
                 case 2:
                     data = (_a.sent()).data;
                     setStyles(data.data);
