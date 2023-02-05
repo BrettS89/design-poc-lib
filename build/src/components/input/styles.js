@@ -16,4 +16,10 @@ export default {
             outline: "2px solid ".concat(styles.main, "!important"),
         },
     },
+    error: {
+        outline: '2px solid red',
+        focus: {
+            outline: "2px solid ".concat(styles.error, "!important"),
+        },
+    },
 };

@@ -5,4 +5,5 @@ export default {
     lightGray: 'lightgray',
     darkBorder: 'gray',
     borderRadius: 8,
+    error: 'red',
 };

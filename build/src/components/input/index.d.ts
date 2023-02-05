@@ -1,7 +1,9 @@
-/// <reference types="react" />
-declare const Input: ({ placeholder, type, styles }: {
-    placeholder: any;
-    type: any;
-    styles?: {};
-}) => JSX.Element;
+import React from 'react';
+interface Props {
+    placeholder?: string;
+    type?: string;
+    styles?: Record<string, any>;
+    error?: string;
+}
+declare const Input: React.FC<Props>;
 export default Input;

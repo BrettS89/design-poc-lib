@@ -7,9 +7,11 @@ function App() {
     <div className="App">
       {/*@ts-ignore */}
 
-      <Button disabled>
-        Hello world!
-      </Button>
+      <Input
+        placeholder='Hello world!'
+        error='this is an error'
+      />
+
     </div>
   );
 };

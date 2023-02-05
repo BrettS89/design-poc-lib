@@ -15,14 +15,22 @@ import baseStyles from './styles';
 import theme from '../../styles/theme';
 var Input = function (_a) {
     var _b;
-    var placeholder = _a.placeholder, type = _a.type, _c = _a.styles, styles = _c === void 0 ? {} : _c;
+    var type = _a.type, placeholder = _a.placeholder, _c = _a.styles, styles = _c === void 0 ? {} : _c, error = _a.error;
     //@ts-ignore
     var themeStyles = (_b = theme.input) !== null && _b !== void 0 ? _b : {};
     var allStyles = __assign(__assign(__assign({}, baseStyles._base), themeStyles), styles);
+    var errorStyles = __assign(__assign(__assign(__assign({}, allStyles), baseStyles.error), (themeStyles.error || {})), (styles.error || {}));
     var Component = styled.input({
         '&::placeholder': allStyles.placeholder,
         '&:focus-within': allStyles.focus,
     });
+    var ErrorComponent = styled.input({
+        '&::placeholder': errorStyles.placeholder,
+        '&:focus-within': errorStyles.focus,
+    });
+    if (error) {
+        return (_jsx(ErrorComponent, { style: errorStyles, placeholder: placeholder, type: type }));
+    }
     return (_jsx(Component, { style: allStyles, placeholder: placeholder, type: type }));
 };
 export default Input;

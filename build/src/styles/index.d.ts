@@ -5,5 +5,6 @@ declare const _default: {
     lightGray: string;
     darkBorder: string;
     borderRadius: number;
+    error: string;
 };
 export default _default;

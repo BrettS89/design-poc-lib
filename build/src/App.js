@@ -11,9 +11,9 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import './App.css';
-import Button from './components/button';
+import Input from './components/input';
 function App() {
-    return (_jsx("div", __assign({ className: "App" }, { children: _jsx(Button, __assign({ disabled: true }, { children: "Hello world!" })) })));
+    return (_jsx("div", __assign({ className: "App" }, { children: _jsx(Input, { placeholder: 'Hello world!', error: 'this is an error' }) })));
 }
 ;
 export default App;

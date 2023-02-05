@@ -15,5 +15,11 @@ declare const _default: {
             outline: string;
         };
     };
+    error: {
+        outline: string;
+        focus: {
+            outline: string;
+        };
+    };
 };
 export default _default;
