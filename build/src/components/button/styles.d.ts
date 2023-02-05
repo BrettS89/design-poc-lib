@@ -4,15 +4,13 @@ declare const _default: {
         border: string;
         cursor: string;
         backgroundColor: string;
-        paddingLeft: number;
-        paddingRight: number;
-        paddingTop: number;
-        paddingBottom: number;
+        paddingLeft: string;
+        paddingRight: string;
+        paddingTop: string;
+        paddingBottom: string;
         borderRadius: number;
         fontSize: number;
     };
-    disabled: {
-        color: string;
-    };
+    disabled: {};
 };
 export default _default;

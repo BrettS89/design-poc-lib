@@ -7,14 +7,12 @@ export default {
     cursor: 'pointer',
     // end of remove default styles
     backgroundColor: styles.lightGray,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    paddingTop: '10px',
+    paddingBottom: '10px',
     borderRadius: styles.borderRadius,
     fontSize: styles.fontSize,
   },
-  disabled: {
-    color: 'red!important',
-  },
+  disabled: {},
 }

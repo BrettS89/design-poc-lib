@@ -13,6 +13,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import styled from '@emotion/styled';
 import baseStyles from './styles';
 import theme from '../../styles/theme';
+import { addImportantToStyles } from '../../utilities';
 var Button = function (_a) {
     var _b;
     var children = _a.children, _c = _a.styles, styles = _c === void 0 ? {} : _c, disabled = _a.disabled;
@@ -22,7 +23,7 @@ var Button = function (_a) {
     //@ts-ignore
     var disabledStyles = __assign(__assign(__assign({}, baseStyles.disabled), (themeStyles.disabled || {})), (styles.disabled || {}));
     var Component = styled.button({
-        '&:disabled': disabledStyles,
+        '&:disabled': addImportantToStyles(disabledStyles),
     });
     return (_jsx(Component, __assign({ style: allStyles, disabled: disabled }, { children: children })));
 };
