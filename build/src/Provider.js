@@ -53,7 +53,9 @@ var DesignSystemUpdateContext = React.createContext((function () { return []; })
 export var useDesignSystem = function (designSystemId) {
     var fn = useContext(DesignSystemUpdateContext);
     var ctx = useContext(DesignSystemContext);
-    fn(designSystemId);
+    React.useEffect(function () {
+        fn(designSystemId);
+    }, []);
     return ctx.status;
 };
 export var useStyles = function (componentName) {

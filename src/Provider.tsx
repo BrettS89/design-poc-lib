@@ -17,7 +17,9 @@ export const useDesignSystem = (designSystemId: string) => {
   const fn = useContext(DesignSystemUpdateContext);
   const ctx = useContext(DesignSystemContext);
 
-  fn(designSystemId);
+  React.useEffect(() => {
+    fn(designSystemId);
+  }, []);
   
   return ctx.status
 };
