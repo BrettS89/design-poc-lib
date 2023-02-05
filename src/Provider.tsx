@@ -10,7 +10,7 @@ interface DesignSystem {
   styles: Record<string, any>[];
 }
 
-const DesignSystemContext = React.createContext<DesignSystem>({ styles: [], status: { isLoading: false, isError: false, error: null } });
+const DesignSystemContext = React.createContext<DesignSystem>({ styles: [], status: { isLoading: true, isError: false, error: null } });
 const DesignSystemUpdateContext = React.createContext((() => []) as any);
 
 export const useDesignSystem = (designSystemId: string) => {
@@ -34,13 +34,12 @@ export const useStyles = (componentName: string) => {
 
 export const DesignSystemProvider = ({ children }) => {
   const [styles, setStyles] = React.useState([]);
-  const [status, setStatus] = React.useState({ isLoading: false, isError: false, error: null });
+  const [status, setStatus] = React.useState({ isLoading: true, isError: false, error: null });
 
   const setDesignSystem = async (designSystemId: string) => {
     try {
       setStatus({ ...status, isLoading: true });
       const designSystem = await axios.get(`http://localhost:3030/design/system/${designSystemId}`);
-      console.log(designSystem.data);
       // @ts-ignore
       const { data } = await axios.get(`http://localhost:3030/design/style?designSystemId=${designSystem.data._id}&$limit=1000`);
       setStyles(data.data);

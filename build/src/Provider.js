@@ -48,7 +48,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { jsx as _jsx } from "react/jsx-runtime";
 import React, { useContext } from 'react';
 import axios from 'axios';
-var DesignSystemContext = React.createContext({ styles: [], status: { isLoading: false, isError: false, error: null } });
+var DesignSystemContext = React.createContext({ styles: [], status: { isLoading: true, isError: false, error: null } });
 var DesignSystemUpdateContext = React.createContext((function () { return []; }));
 export var useDesignSystem = function (designSystemId) {
     var fn = useContext(DesignSystemUpdateContext);
@@ -66,7 +66,7 @@ export var useStyles = function (componentName) {
 export var DesignSystemProvider = function (_a) {
     var children = _a.children;
     var _b = React.useState([]), styles = _b[0], setStyles = _b[1];
-    var _c = React.useState({ isLoading: false, isError: false, error: null }), status = _c[0], setStatus = _c[1];
+    var _c = React.useState({ isLoading: true, isError: false, error: null }), status = _c[0], setStatus = _c[1];
     var setDesignSystem = function (designSystemId) { return __awaiter(void 0, void 0, void 0, function () {
         var designSystem, data, e_1;
         return __generator(this, function (_a) {
@@ -77,7 +77,6 @@ export var DesignSystemProvider = function (_a) {
                     return [4 /*yield*/, axios.get("http://localhost:3030/design/system/".concat(designSystemId))];
                 case 1:
                     designSystem = _a.sent();
-                    console.log(designSystem.data);
                     return [4 /*yield*/, axios.get("http://localhost:3030/design/style?designSystemId=".concat(designSystem.data._id, "&$limit=1000"))];
                 case 2:
                     data = (_a.sent()).data;
