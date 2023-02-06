@@ -4,10 +4,10 @@ declare const _default: {
         border: string;
         cursor: string;
         backgroundColor: string;
-        paddingLeft: string;
-        paddingRight: string;
-        paddingTop: string;
-        paddingBottom: string;
+        paddingLeft: number;
+        paddingRight: number;
+        paddingTop: number;
+        paddingBottom: number;
         borderRadius: number;
         fontSize: number;
     };
