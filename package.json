@@ -1,6 +1,6 @@
 {
   "name": "@blsodie/ui2",
-  "version": "0.5.7",
+  "version": "0.6.0",
   "dependencies": {
     "@emotion/styled": "^11.10.5",
     "@testing-library/jest-dom": "^5.16.5",

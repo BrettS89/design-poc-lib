@@ -1,22 +1,30 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import baseStyles from './styles';
+import defaultStyles from './styles';
 import { addImportantToStyles } from '../../utilities';
 import { useStyles } from '../../Provider';
 
 interface Props extends React.PropsWithChildren {
+  variant?: string;
   styles?: Record<string, any>;
   disabled?: boolean;
 }
 
-const Button: React.FC<Props> = ({ children, styles = {}, disabled }) => {
-  const componentStyles = useStyles('button');
+const Button: React.FC<Props> = ({ children, styles = {}, disabled, variant='base' }) => {
+  const component = useStyles('button');
+  const themeStyles = component?.styles ?? {};
 
-  //@ts-ignore
-  const themeStyles = componentStyles?.styles ?? {};
-  const allStyles = { ...baseStyles._base, ...themeStyles, ...styles };
-  //@ts-ignore
-  const disabledStyles = { ...baseStyles.disabled, ...(themeStyles.disabled || {}), ...(styles.disabled || {}) }
+  const variantDefaultStyles = defaultStyles[variant] ?? defaultStyles.base;
+  const variantThemeStyles = themeStyles[variant] ?? {};
+  const variantPropsStyles = styles[variant] ?? {};
+
+  const allStyles = {
+    ...variantDefaultStyles,
+    ...variantThemeStyles,
+    ...variantPropsStyles
+  };
+
+  const disabledStyles = allStyles.disabled ?? {};
 
   const Component = styled.button({
     '&:disabled': addImportantToStyles(disabledStyles),

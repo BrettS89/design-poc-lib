@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import baseStyles from './styles';
-import theme from '../../styles/theme';
+import defaultStyles from './styles';
+import { useStyles } from '../../Provider';
+import { addImportantToStyles } from '../../utilities';
 
 interface Props {
   placeholder?: string;
@@ -11,25 +12,30 @@ interface Props {
 }
 
 const Input: React.FC<Props> = ({ type, placeholder, styles={}, error }) => {
-  //@ts-ignore
-  const themeStyles = theme.input ?? {};
-  const allStyles = { ...baseStyles._base, ...themeStyles, ...styles };
+  const component = useStyles('input');
+  const themeStyles = component?.styles ?? {};
+
+  const baseStyles = {
+    ...defaultStyles.base ?? {},
+    ...themeStyles.base ?? {},
+    ...styles.base ?? {},
+  };
+
   const errorStyles = {
-    ...allStyles,
-    //@ts-ignore
-    ...baseStyles.error,
-    ...(themeStyles.error || {}),
-    ...(styles.error || {}),
-  }
+    ...baseStyles,
+    ...defaultStyles.error ?? {},
+    ...themeStyles.error ?? {},
+    ...styles.error ?? {},
+  };
 
   const Component = styled.input({
-    '&::placeholder': allStyles.placeholder,
-    '&:focus-within': allStyles.focus,
+    '&::placeholder': addImportantToStyles(baseStyles.placeholder),
+    '&:focus-within': addImportantToStyles(baseStyles.focus),
   });
 
   const ErrorComponent = styled.input({
-    '&::placeholder': errorStyles.placeholder,
-    '&:focus-within': errorStyles.focus,
+    '&::placeholder': addImportantToStyles(errorStyles.placeholder),
+    '&:focus-within': addImportantToStyles(errorStyles.focus),
   });
 
   if (error) {
@@ -39,12 +45,12 @@ const Input: React.FC<Props> = ({ type, placeholder, styles={}, error }) => {
         placeholder={placeholder}
         type={type}
       />
-    )
+    );
   }
 
   return (
     <Component
-      style={allStyles}
+      style={baseStyles}
       placeholder={placeholder}
       type={type}
     />

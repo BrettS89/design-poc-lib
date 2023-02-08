@@ -1,6 +1,6 @@
 import styles from '../../styles';
 export default {
-    _base: {
+    base: {
         paddingLeft: 10,
         paddingRight: 10,
         paddingTop: 10,

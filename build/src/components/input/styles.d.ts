@@ -1,5 +1,5 @@
 declare const _default: {
-    _base: {
+    base: {
         paddingLeft: number;
         paddingRight: number;
         paddingTop: number;

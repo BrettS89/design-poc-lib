@@ -1,5 +1,5 @@
 declare const _default: {
-    _base: {
+    base: {
         background: string;
         border: string;
         cursor: string;
@@ -10,7 +10,7 @@ declare const _default: {
         paddingBottom: number;
         borderRadius: number;
         fontSize: number;
+        disabled: {};
     };
-    disabled: {};
 };
 export default _default;

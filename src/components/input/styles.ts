@@ -1,7 +1,7 @@
 import styles from '../../styles';
 
 export default {
-  _base: {
+  base: {
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 10,
@@ -10,7 +10,6 @@ export default {
     border: 'none',
     outline: '2px solid lightgray',
     fontSize: 16,
-
     placeholder: {
       fontSize: 16,
     },
