@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import _ from 'lodash';
 import defaultStyles from './styles';
 import { useStyles } from '../../Provider';
 import { addImportantToStyles } from '../../utilities';
@@ -15,18 +16,18 @@ const Input: React.FC<Props> = ({ type, placeholder, styles={}, error }) => {
   const component = useStyles('input');
   const themeStyles = component?.styles ?? {};
 
-  const baseStyles = {
+  const baseStyles = _.omitBy({
     ...defaultStyles.base ?? {},
     ...themeStyles.base ?? {},
     ...styles.base ?? {},
-  };
+  }, _.isNil);
 
-  const errorStyles = {
+  const errorStyles = _.omitBy({
     ...baseStyles,
     ...defaultStyles.error ?? {},
     ...themeStyles.error ?? {},
     ...styles.error ?? {},
-  };
+  }, _.isNil);
 
   const Component = styled.input({
     '&::placeholder': addImportantToStyles(baseStyles.placeholder),

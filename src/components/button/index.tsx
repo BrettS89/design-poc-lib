@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
+import _ from 'lodash';
 import defaultStyles from './styles';
 import { addImportantToStyles } from '../../utilities';
 import { useStyles } from '../../Provider';
@@ -18,11 +19,11 @@ const Button: React.FC<Props> = ({ children, styles = {}, disabled, variant='bas
   const variantThemeStyles = themeStyles[variant] ?? {};
   const variantPropsStyles = styles[variant] ?? {};
 
-  const allStyles = {
+  const allStyles = _.omitBy({
     ...variantDefaultStyles,
     ...variantThemeStyles,
     ...variantPropsStyles
-  };
+  }, _.isNil);
 
   const disabledStyles = allStyles.disabled ?? {};
 
