@@ -16,18 +16,18 @@ const Input: React.FC<Props> = ({ type, placeholder, styles={}, error }) => {
   const component = useStyles('input');
   const themeStyles = component?.styles ?? {};
 
-  const baseStyles = _.omitBy({
-    ...defaultStyles.base ?? {},
-    ...themeStyles.base ?? {},
-    ...styles.base ?? {},
-  }, _.isNil);
+  const baseStyles = {
+    ..._.omitBy(defaultStyles.base ?? {}, _.isNil),
+    ..._.omitBy(themeStyles.base ?? {}, _.isNil),
+    ..._.omitBy(styles.base ?? {}, _.isNil),
+  };
 
-  const errorStyles = _.omitBy({
-    ...baseStyles,
-    ...defaultStyles.error ?? {},
-    ...themeStyles.error ?? {},
-    ...styles.error ?? {},
-  }, _.isNil);
+  const errorStyles = {
+    ..._.omitBy(baseStyles, _.isNil),
+    ..._.omitBy(defaultStyles.error ?? {}, _.isNil),
+    ..._.omitBy(themeStyles.error ?? {}, _.isNil),
+    ..._.omitBy(styles.error ?? {}, _.isNil),
+  };
 
   const Component = styled.input({
     '&::placeholder': addImportantToStyles(baseStyles.placeholder),

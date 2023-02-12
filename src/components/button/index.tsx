@@ -19,11 +19,11 @@ const Button: React.FC<Props> = ({ children, styles = {}, disabled, variant='bas
   const variantThemeStyles = themeStyles[variant] ?? {};
   const variantPropsStyles = styles[variant] ?? {};
 
-  const allStyles = _.omitBy({
-    ...variantDefaultStyles,
-    ...variantThemeStyles,
-    ...variantPropsStyles
-  }, _.isNil);
+  const allStyles = {
+    ..._.omitBy(variantDefaultStyles, _.isNil),
+    ..._.omitBy(variantThemeStyles, _.isNil),
+    ..._.omitBy(variantPropsStyles, _.isNil),
+  };
 
   const disabledStyles = allStyles.disabled ?? {};
 

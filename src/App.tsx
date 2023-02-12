@@ -7,10 +7,9 @@ function App() {
     <div className="App">
       {/*@ts-ignore */}
 
-      <Input
-        placeholder='Hello world!'
-        error='this is an error'
-      />
+      <Button styles={{ base: { paddingTop: undefined } }}>
+        Hello
+      </Button>
 
     </div>
   );

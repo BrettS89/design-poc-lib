@@ -20,8 +20,8 @@ var Input = function (_a) {
     var type = _a.type, placeholder = _a.placeholder, _j = _a.styles, styles = _j === void 0 ? {} : _j, error = _a.error;
     var component = useStyles('input');
     var themeStyles = (_b = component === null || component === void 0 ? void 0 : component.styles) !== null && _b !== void 0 ? _b : {};
-    var baseStyles = _.omitBy(__assign(__assign(__assign({}, (_c = defaultStyles.base) !== null && _c !== void 0 ? _c : {}), (_d = themeStyles.base) !== null && _d !== void 0 ? _d : {}), (_e = styles.base) !== null && _e !== void 0 ? _e : {}), _.isNil);
-    var errorStyles = _.omitBy(__assign(__assign(__assign(__assign({}, baseStyles), (_f = defaultStyles.error) !== null && _f !== void 0 ? _f : {}), (_g = themeStyles.error) !== null && _g !== void 0 ? _g : {}), (_h = styles.error) !== null && _h !== void 0 ? _h : {}), _.isNil);
+    var baseStyles = __assign(__assign(__assign({}, _.omitBy((_c = defaultStyles.base) !== null && _c !== void 0 ? _c : {}, _.isNil)), _.omitBy((_d = themeStyles.base) !== null && _d !== void 0 ? _d : {}, _.isNil)), _.omitBy((_e = styles.base) !== null && _e !== void 0 ? _e : {}, _.isNil));
+    var errorStyles = __assign(__assign(__assign(__assign({}, _.omitBy(baseStyles, _.isNil)), _.omitBy((_f = defaultStyles.error) !== null && _f !== void 0 ? _f : {}, _.isNil)), _.omitBy((_g = themeStyles.error) !== null && _g !== void 0 ? _g : {}, _.isNil)), _.omitBy((_h = styles.error) !== null && _h !== void 0 ? _h : {}, _.isNil));
     var Component = styled.input({
         '&::placeholder': addImportantToStyles(baseStyles.placeholder),
         '&:focus-within': addImportantToStyles(baseStyles.focus),
