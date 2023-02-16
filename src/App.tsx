@@ -7,9 +7,13 @@ function App() {
     <div className="App">
       {/*@ts-ignore */}
 
-      <Button styles={{ base: { paddingTop: undefined } }}>
+      <Input
+        placeholder='Email'
+      />
+
+      {/* <Button styles={{ base: { fontWeight: 'bold' } }}>
         Hello
-      </Button>
+      </Button> */}
 
     </div>
   );
