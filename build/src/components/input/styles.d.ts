@@ -6,7 +6,9 @@ declare const _default: {
         paddingBottom: number;
         borderRadius: number;
         border: string;
-        outline: string;
+        outlineStyle: string;
+        outlineColor: string;
+        outlineWidth: number;
         fontSize: number;
         placeholder: {
             fontSize: number;

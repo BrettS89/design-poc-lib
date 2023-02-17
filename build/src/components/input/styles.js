@@ -7,7 +7,10 @@ export default {
         paddingBottom: 10,
         borderRadius: 8,
         border: 'none',
-        outline: '2px solid lightgray',
+        // outline: '2px solid lightgray',
+        outlineStyle: 'solid',
+        outlineColor: 'lightgray',
+        outlineWidth: 2,
         fontSize: 16,
         placeholder: {
             fontSize: 16,

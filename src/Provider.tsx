@@ -39,9 +39,9 @@ export const DesignSystemProvider = ({ children }) => {
   const setDesignSystem = async (designSystemId: string) => {
     try {
       setStatus({ ...status, isLoading: true });
-      const designSystem = await axios.get(`http://localhost:3030/design/system/${designSystemId}`);
+      const designSystem = await axios.get(`https://bls.ngrok.io/design-poc-api/design/system/${designSystemId}`);
       // @ts-ignore
-      const { data } = await axios.get(`http://localhost:3030/design/style?designSystemId=${designSystem.data._id}&$limit=1000`);
+      const { data } = await axios.get(`https://bls.ngrok.io/design-poc-api/design/style?designSystemId=${designSystem.data._id}&$limit=1000`);
       setStyles(data.data);
       setStatus({ ...status, isLoading: false });
     } catch(e) {

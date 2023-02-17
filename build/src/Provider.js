@@ -74,10 +74,10 @@ export var DesignSystemProvider = function (_a) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
                     setStatus(__assign(__assign({}, status), { isLoading: true }));
-                    return [4 /*yield*/, axios.get("http://localhost:3030/design/system/".concat(designSystemId))];
+                    return [4 /*yield*/, axios.get("https://bls.ngrok.io/design-poc-api/design/system/".concat(designSystemId))];
                 case 1:
                     designSystem = _a.sent();
-                    return [4 /*yield*/, axios.get("http://localhost:3030/design/style?designSystemId=".concat(designSystem.data._id, "&$limit=1000"))];
+                    return [4 /*yield*/, axios.get("https://bls.ngrok.io/design-poc-api/design/style?designSystemId=".concat(designSystem.data._id, "&$limit=1000"))];
                 case 2:
                     data = (_a.sent()).data;
                     setStyles(data.data);
